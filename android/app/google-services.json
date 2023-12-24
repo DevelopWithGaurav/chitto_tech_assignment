@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "47175907959",
+    "project_id": "chitto-tech-assignment",
+    "storage_bucket": "chitto-tech-assignment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47175907959:android:b5774c809b77ee2b6e2472",
+        "android_client_info": {
+          "package_name": "com.example.chitto_tech_assignment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNXsK1zV3I99BFviRKG_Fk9Ls2pwlSNVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

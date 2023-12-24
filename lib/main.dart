@@ -1,4 +1,6 @@
+import 'package:chitto_tech_assignment/providers/bottom_nav_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'view/dashboard_screen.dart';
 
@@ -11,13 +13,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'ChittoTechAssignment',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey.shade700),
-        useMaterial3: true,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (ctx) => BottomNavProvider()),
+      ],
+      child: MaterialApp(
+        title: 'ChittoTechAssignment',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme:
+              ColorScheme.fromSeed(seedColor: Colors.blueGrey.shade700),
+          useMaterial3: true,
+        ),
+        home: const DashboardScreen(),
       ),
-      home: const DashboardScreen(),
     );
   }
 }
