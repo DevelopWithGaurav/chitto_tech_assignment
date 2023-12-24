@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:google_sign_in/google_sign_in.dart';
+
 import '../constant.dart';
 import '../view/dashboard_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -12,6 +14,12 @@ import '../main.dart';
 
 class FirebaseAuthProvider with ChangeNotifier {
   FirebaseAuth? auth = FirebaseAuth.instance;
+
+  GoogleSignIn googleSignIn = GoogleSignIn(
+    scopes: <String>[
+      'email',
+    ],
+  );
 
   String phoneNumber = '';
   final phoneOTP = TextEditingController();
@@ -173,6 +181,24 @@ class FirebaseAuthProvider with ChangeNotifier {
     if (_isLoading == true) {
       _isLoading = false;
       notifyListeners();
+    }
+  }
+
+  Future<void> signInWithGoogle(context) async {
+    if (await googleSignIn.isSignedIn()) {
+      googleSignIn.signOut();
+    }
+    try {
+      final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser!.authentication;
+      final googleAuthCredential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+      await signInWithCredential(googleAuthCredential);
+    } catch (e) {
+      log(e.toString(), name: "ERROR GOOGLE SIGNIN");
     }
   }
 
