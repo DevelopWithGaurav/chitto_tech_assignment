@@ -1,8 +1,9 @@
-import 'package:chitto_tech_assignment/view/ceritificate_screen.dart';
-import 'package:chitto_tech_assignment/view/chat_screen.dart';
-import 'package:chitto_tech_assignment/view/profile_screen.dart';
-import 'package:chitto_tech_assignment/view/score_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../view/ceritificate_screen.dart';
+import '../view/chat_screen.dart';
+import '../view/profile_screen.dart';
+import '../view/score_screen.dart';
 
 class BottomNavProvider with ChangeNotifier {
   List<Widget> bottomTabs = [

@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '47175907959',
     projectId: 'chitto-tech-assignment',
     storageBucket: 'chitto-tech-assignment.appspot.com',
+    iosClientId: '47175907959-k42asfqbm8po3bi1k75facj9kiap5jnl.apps.googleusercontent.com',
     iosBundleId: 'com.example.chittoTechAssignment',
   );
 }

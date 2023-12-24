@@ -1,6 +1,7 @@
-import 'package:chitto_tech_assignment/providers/bottom_nav_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../providers/bottom_nav_provider.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
