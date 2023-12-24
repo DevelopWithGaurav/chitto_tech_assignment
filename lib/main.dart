@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 import 'providers/bottom_nav_provider.dart';
 import 'providers/firebase_auth_provider.dart';
+import 'providers/profile_timer_provider.dart';
 import 'view/splash_screen.dart';
 
 void main() async {
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (ctx) => BottomNavProvider()),
         ChangeNotifierProvider(create: (ctx) => FirebaseAuthProvider()),
+        ChangeNotifierProvider(create: (ctx) => ProfileTimerProvider()),
       ],
       child: MaterialApp(
         title: 'ChittooTechAssignment',
